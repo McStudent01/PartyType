@@ -1,48 +1,32 @@
-import java.util.Objects;
 import java.util.Scanner;
 
-public class PartyType
-{
-    public static void main(String[] args)
-    {
+public class PartyType {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String democrat = "D";
-        String republican = "R";
-        String independent = "I";
-        String other = "O";
-        String trash = "";
+        String partyChoice = "";
+        String menu = "What is your party affiliation:\nD - Democratic\tR - Republican\tI - Independent\tQ - Quit";
 
-        System.out.println("What is your party affiliation?");
-        System.out.println("(D)emocrat");
-        System.out.println("(R)epublican");
-        System.out.println("(I)ndependent");
-        System.out.println("(O)ther");
+        System.out.println(menu);
+        partyChoice = in.nextLine();
 
-        String partyAffiliation = in.nextLine();
-
-        if (Objects.equals(partyAffiliation, democrat))
+        if(partyChoice.equalsIgnoreCase("D"))
         {
-            System.out.println("You are a Democratic Donkey.");
-        } else if (Objects.equals(partyAffiliation, republican))
-        {
-            System.out.println("You are a Republican Elephant.");
-        } else if (Objects.equals(partyAffiliation, independent))
-        {
-            System.out.println("You are an Independent Person.");
-        } else if (Objects.equals(partyAffiliation, other))
-        {
-            System.out.println("You are an Other or undecided.");
-        } else if (Objects.equals(partyAffiliation, trash))
-        {
-            System.out.println("Please enter a valid option and not " +trash + ".");
+            System.out.println("You are a Democratic Donkey");
         }
+        else if(partyChoice.equalsIgnoreCase("R"))
+        {
+            System.out.println("You are a Republican Elephant");
+        }
+        else if(partyChoice.equalsIgnoreCase("I"))
+        {
+            System.out.println("You are an Independent Person");
+        }
+        else if(partyChoice.equalsIgnoreCase("Q"))
+        {
+            System.out.println("Remember, you volunteered to end this. ");
+        }
+        else
+            System.out.println("This is not a valid choice " + partyChoice + " must be [D,R,I]");
 
         }
-
     }
-
-    }
-
-            }
-            }
-            }
